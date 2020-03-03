@@ -133,11 +133,11 @@ function movieThis() {
         query = "mr nobody";
     };
 
-    // REQUEST USING OMDB API
+    // Requests movie data from OMDB API
     request("http://www.omdbapi.com/?t=" + query + "&apikey=trilogy", function (error, response, body) {
         var movie = JSON.parse(body);
 
-        // BECAUSE THE ROTTEN TOMATOES RATING WAS NESTED IT WAS NECESSARY TO CAPTURE ITS VALUES IN AN ARRAY TO CREATE A PATH
+        // Retrieve RottenTomatoes ratings from response
         var ratingsArr = movie.Ratings;
         if (ratingsArr.length > 2) {}
 
