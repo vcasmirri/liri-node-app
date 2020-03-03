@@ -147,7 +147,7 @@ function spotifyThis() {
 
 function doThis() {
 
-    var doCommand = '\n------------------------\nRecorded user command and query: ' + command + '\n------------------------';
+    var doCommand = '\n------------------------\nRecorded user command: ' + command + '. This will execute contents of random.txt.\n------------------------';
 
     fs.appendFile("log.txt", doCommand, function(err) {
         // Logs errors, if any
@@ -197,7 +197,17 @@ function movieThis() {
         if (ratingsArr.length > 2) {}
 
         if (!error && response.statusCode == 200) {
-            console.log(`\nTitle: ${movie.Title}\nCast: ${movie.Actors}\nReleased: ${movie.Year}\nIMDb Rating: ${movie.imdbRating}\nRotten Tomatoes Rating: ${movie.Ratings[1].Value}\nCountry: ${movie.Country}\nLanguage: ${movie.Language}\nPlot: ${movie.Plot}\n\n------------------------`)
+            var movieLog = `\n------------------------\nTitle: ${movie.Title}\nCast: ${movie.Actors}\nReleased: ${movie.Year}\nIMDb Rating: ${movie.imdbRating}\nRotten Tomatoes Rating: ${movie.Ratings[1].Value}\nCountry: ${movie.Country}\nLanguage: ${movie.Language}\nPlot: ${movie.Plot}\n------------------------`
+            console.log(movieLog)
+
+            // Adds output data to log.txt file
+            fs.appendFile("log.txt", movieLog, function(err) {
+                // Logs errors, if any
+                if (err) {
+                    console.log(err);
+                }
+            });
+
         } else {
             return console.log("Can't seem to find the movie, sorry. Error: " + error)
         };

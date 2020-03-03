@@ -1,55 +1,17 @@
 
 ------------------------
-Recorded user command and query: concert-this animal collective
+Recorded user command and query: movie-this the matrix
 ------------------------
 ------------------------
-Artist: Animal Collective 
-Venue: Schimanski
-Venue Location: Brooklyn, United States
-Date and Start Time: 03/20/2020 10:00 PM
+Recorded user command and query: movie-this the matrix
 ------------------------
 ------------------------
-Recorded user command and query: concert-this dan deacon
-------------------------
-------------------------
-Artist: Dan Deacon 
-Venue: One Eyed Jacks
-Venue Location: New Orleans, United States
-Date and Start Time: 03/03/2020 09:00 PM
-------------------------
-------------------------
-Recorded user command and query: spotify-this-song wham city
-------------------------
-------------------------
-Recorded user command and query: spotify-this-song wham city
-------------------------
-Artist: Dan Deacon 
-Song: Wham City
-Album: Spiderman Of The Rings
-Spotify Link: https://open.spotify.com/track/4U138GkSGVyIjl7I4aLGSI
-
-------------------------
-------------------------
-Recorded user command and query: spotify-this-song wham city
-------------------------
-Artist: Dan Deacon 
-Song: Wham City
-Album: Spiderman Of The Rings
-Spotify Link: https://open.spotify.com/track/4U138GkSGVyIjl7I4aLGSI
-------------------------
-------------------------
-Recorded user command and query: spotify-this-song wham city
-------------------------Artist: Dan Deacon 
-Song: Wham City
-Album: Spiderman Of The Rings
-Spotify Link: https://open.spotify.com/track/4U138GkSGVyIjl7I4aLGSI
-------------------------
-------------------------
-Recorded user command and query: spotify-this-song wham city
-------------------------
-------------------------
-Artist: Dan Deacon 
-Song: Wham City
-Album: Spiderman Of The Rings
-Spotify Link: https://open.spotify.com/track/4U138GkSGVyIjl7I4aLGSI
+Title: The Matrix
+Cast: Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
+Released: 1999
+IMDb Rating: 8.7
+Rotten Tomatoes Rating: 88%
+Country: USA
+Language: English
+Plot: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
 ------------------------
