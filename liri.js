@@ -11,9 +11,7 @@ var moment = require('moment');
 var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
 
-const fs = require("fs");
-
-var bandsintown = (keys.bandsintown);
+var fs = require("fs");
 
 // Storing user commands
 
@@ -56,7 +54,7 @@ function concertThis() {
     console.log(`\n------------------------\n\nOne moment, searching for ${query}'s next concert...`);
 
     // Request info from API using user's query and adding it to query URL
-    request("https://rest.bandsintown.com/artists/" + query + "/events?app_id=" + bandsintown, function (error, response, body) {
+    request("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp", function (error, response, body) {
        
     // Sets 200 status code if there aren't any errors
         if (!error && response.statusCode === 200) {
