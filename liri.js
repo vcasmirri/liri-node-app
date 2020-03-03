@@ -126,3 +126,25 @@ function doThis() {
         userInput(command, query);
     });
 };
+
+function movieThis() {
+    console.log(`\n------------------------\n\nOne moment, searching for "${query}"`);
+    if (!query) {
+        query = "mr nobody";
+    };
+
+    // REQUEST USING OMDB API
+    request("http://www.omdbapi.com/?t=" + query + "&apikey=trilogy", function (error, response, body) {
+        var movie = JSON.parse(body);
+
+        // BECAUSE THE ROTTEN TOMATOES RATING WAS NESTED IT WAS NECESSARY TO CAPTURE ITS VALUES IN AN ARRAY TO CREATE A PATH
+        var ratingsArr = movie.Ratings;
+        if (ratingsArr.length > 2) {}
+
+        if (!error && response.statusCode == 200) {
+            console.log(`\nTitle: ${movie.Title}\nCast: ${movie.Actors}\nReleased: ${movie.Year}\nIMDb Rating: ${movie.imdbRating}\nRotten Tomatoes Rating: ${movie.Ratings[1].Value}\nCountry: ${movie.Country}\nLanguage: ${movie.Language}\nPlot: ${movie.Plot}\n\n------------------------`)
+        } else {
+            return console.log("Can't seem to find the movie, sorry. Error: " + error)
+        };
+    })
+};
