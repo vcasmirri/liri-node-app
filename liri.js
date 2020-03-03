@@ -11,9 +11,7 @@ var moment = require('moment');
 var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
 
-const fs = require("fs");
-
-var bandsintown = (keys.bandsintown);
+var fs = require("fs");
 
 // Storing user commands
 
