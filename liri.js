@@ -23,16 +23,16 @@ var query = process.argv.slice(3).join(" ");
 function userInput(command, query) {
     switch (command) {
         case "concert-this":
-            concertThis();
+            concertFunction();
             break;
         case "spotify-this-song":
-            spotifyThis();
+            spotifyFunction();
             break;
         case "do-what-it-says":
-            doThis(query);
+            doRandom(query);
             break;
         case "movie-this":
-            movieThis();
+            movieFunction();
             break;
         default:
             console.log("Sorry, didn't understand the command.");
@@ -48,7 +48,7 @@ userInput(command, query);
 
 // Defines Bands in Town Artist Events API function
 
-function concertThis() {
+function concertFunction() {
 
     // Note that query is working/searching
     console.log(`\n------------------------\n\nOne moment, searching for ${query}'s next concert...`);
@@ -93,7 +93,7 @@ function concertThis() {
     });
 };
 
-function spotifyThis() {
+function spotifyFunction() {
 
     // Note that query is working/searching
     console.log(`\n------------------------\n\nOne moment, searching for "${query}"`);
@@ -143,7 +143,7 @@ function spotifyThis() {
 
 // Defines function that reads random.txt
 
-function doThis() {
+function doRandom() {
 
     var doCommand = '\n------------------------\nRecorded user command: ' + command + '. This will execute contents of random.txt.\n------------------------';
 
@@ -170,7 +170,7 @@ function doThis() {
     });
 };
 
-function movieThis() {
+function movieFunction() {
     console.log(`\n------------------------\n\nOne moment, searching for "${query}"`);
 
     var movieCommand = '\n------------------------\nRecorded user command and query: ' + command + ' ' + query + '\n------------------------';
