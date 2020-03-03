@@ -55,6 +55,15 @@ function concertThis() {
     // Note that query is working/searching
     console.log(`\n------------------------\n\nOne moment, searching for ${query}'s next concert...`);
 
+    var concertCommand = '\n------------------------\nRecorded user command and query: ' + command + ' ' + query + '\n------------------------';
+
+    fs.appendFile("log.txt", concertCommand, function(err) {
+        // Logs errors, if any
+        if (err) {
+            console.log(err);
+        }
+    });
+
     // Request info from API using user's query and adding it to query URL
     request("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp", function (error, response, body) {
        
@@ -66,9 +75,17 @@ function concertThis() {
         
             if (music.length > 0) {
                 for (i = 0; i < 1; i++) {
-                    console.log(`\nArtist: ${music[i].lineup[0]} \nVenue: ${music[i].venue.name}\nVenue Location: ${music[i].venue.city}, ${music[i].venue.country}`)
                     var musicDate = moment(music[i].datetime).format("MM/DD/YYYY hh:00 A");
-                    console.log(`Date and Start Time: ${musicDate}\n\n------------------------`);
+                    var concertLog = `\n------------------------\nArtist: ${music[i].lineup[0]} \nVenue: ${music[i].venue.name}\nVenue Location: ${music[i].venue.city}, ${music[i].venue.country}\nDate and Start Time: ${musicDate}\n------------------------`
+                    console.log(concertLog);
+
+                    fs.appendFile("log.txt", concertLog, function(err) {
+                        // Logs errors, if any
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+
                 };
 
             } else {
@@ -82,6 +99,15 @@ function spotifyThis() {
 
     // Note that query is working/searching
     console.log(`\n------------------------\n\nOne moment, searching for "${query}"`);
+
+    var spotifyCommand = '\n------------------------\nRecorded user command and query: ' + command + ' ' + query + '\n------------------------';
+
+    fs.appendFile("log.txt", spotifyCommand, function(err) {
+        // Logs errors, if any
+        if (err) {
+            console.log(err);
+        }
+    });
 
     // Default to "The Sign" by Ace of Base if query is not found.
     if (!query) {
@@ -102,7 +128,17 @@ function spotifyThis() {
         var spotifyArr = data.tracks.items;
 
         for (i = 0; i < spotifyArr.length; i++) {
-            console.log(`\nArtist: ${data.tracks.items[i].album.artists[0].name} \nSong: ${data.tracks.items[i].name}\nAlbum: ${data.tracks.items[i].album.name}\nSpotify Link: ${data.tracks.items[i].external_urls.spotify}\n\n------------------------`)
+            var spotifyLog = `\n------------------------\nArtist: ${data.tracks.items[i].album.artists[0].name} \nSong: ${data.tracks.items[i].name}\nAlbum: ${data.tracks.items[i].album.name}\nSpotify Link: ${data.tracks.items[i].external_urls.spotify}\n------------------------`
+            console.log(spotifyLog)
+
+            // Adds output data to log.txt file
+            fs.appendFile("log.txt", spotifyLog, function(err) {
+                // Logs errors, if any
+                if (err) {
+                    console.log(err);
+                }
+            });
+
         };
     });
 }
@@ -110,6 +146,15 @@ function spotifyThis() {
 // Defines function that reads random.txt
 
 function doThis() {
+
+    var doCommand = '\n------------------------\nRecorded user command and query: ' + command + '\n------------------------';
+
+    fs.appendFile("log.txt", doCommand, function(err) {
+        // Logs errors, if any
+        if (err) {
+            console.log(err);
+        }
+    });
   
     fs.readFile("random.txt", "utf8", function (error, data) {
         if (error) {
@@ -129,6 +174,16 @@ function doThis() {
 
 function movieThis() {
     console.log(`\n------------------------\n\nOne moment, searching for "${query}"`);
+
+    var movieCommand = '\n------------------------\nRecorded user command and query: ' + command + ' ' + query + '\n------------------------';
+
+    fs.appendFile("log.txt", movieCommand, function(err) {
+        // Logs errors, if any
+        if (err) {
+            console.log(err);
+        }
+    });
+
     if (!query) {
         query = "mr nobody";
     };
