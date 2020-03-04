@@ -8,6 +8,12 @@ The logic of the app takes in arguments from a user's command-line arguments and
 
 ---
 
+### Demonstration
+
+See a short demonstration of how the app works [here](https://drive.google.com/file/d/171O_y2AIyS4BKCo5GJDt4s56zRvJJN-Z/view)!
+
+---
+
 ### Why LIRI?
 LIRI stands for "Language Interpretation and Recognition Interface". Think SIRI, except it uses the command line instead of speech.
 
@@ -33,8 +39,3 @@ The following descriptions primarily originate from their respective pages on np
 2. **Dotenv**: Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. In this app, this sets environment variables that help mask our API keys on GitHub.
 3. **FS**: Built in to Node already, this package allows us to use functions like readFile() and appendFile(). This is essential for our log function and the 'do-what-it-says' command.
 4. **Moment**: This Javascript library helps us format dates in the JSON responses we receive from the API requests.
-
----
-### Demonstration
-
-See a short demonstration of how the app works [here](https://drive.google.com/file/d/171O_y2AIyS4BKCo5GJDt4s56zRvJJN-Z/view)!
