@@ -6,7 +6,7 @@ This Node application takes a user command specific query to output responses fr
 
 The logic of the app takes in arguments from a user's command-line arguments and utilizes Axios to request API responses. It then logs a JSON response with the requested information in the console. At the same time, the user's arguments and the JSON response are both logged to a text file (log.txt).
 
-Found on my portfolio page [here](https://vcasmirri.github.io/Bootstrap-Portfolio/portfolio.html).
+Find this project and others on my portfolio page [here](https://vcasmirri.github.io/Bootstrap-Portfolio/portfolio.html).
 
 ---
 
